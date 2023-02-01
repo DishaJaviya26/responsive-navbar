@@ -7,5 +7,5 @@ https://user-images.githubusercontent.com/74601619/216010545-28975a66-c83e-4f0a-
 
 ## Technologies
 
-* React JS
+* React JS 
 * Tailwind CSS
