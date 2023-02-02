@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 function Navbar() {
 
-  const [show, setShow] = useState(false)
+  const [menuButton, setMenuButton] = useState(false)
 
-  const links = [
+  const navLinks = [
     {link : "Home", href : "/home"},
     {link : "Products", href : "/products"},
     {link : "Contact", href : "/contact"},
@@ -23,16 +23,16 @@ function Navbar() {
                     <span className="ml-3 text-xl">Navbar</span>
                 </a>
 
-                <button onClick={()=>{ setShow(!show) }} className="inline-flex items-center md:hidden bg-indigo-50 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base">
+                <button onClick={()=>{ setMenuButton(!menuButton) }} className="inline-flex items-center md:hidden bg-indigo-50 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-justify w-6" viewBox="0 0 16 16"> 
                         <path fillRule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/> 
                     </svg>
                 </button>
             </div>
             
-            <nav className={`${show ? 'flex' : 'hidden' } md:ml-auto md:flex md:flex-row flex-col items-center text-base justify-center space-y-4 mt-4 md:space-y-0 md:mt-0`}>
+            <nav className={`${menuButton ? 'flex' : 'hidden' } md:ml-auto md:flex md:flex-row flex-col items-center text-base justify-center space-y-4 mt-4 md:space-y-0 md:mt-0`}>
                 {
-                    links.map(element => 
+                    navLinks.map(element => 
                         <a href={element.href} key={element.link} className="mr-5 hover:text-gray-900">{element.link}</a>
                     )
                 }
